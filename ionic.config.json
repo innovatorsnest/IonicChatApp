@@ -1,0 +1,7 @@
+{
+  "name": "conversationalTool",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
