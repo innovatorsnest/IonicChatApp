@@ -6,20 +6,30 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ChatRoomPage } from '../pages/chat-room/chat-room';
+
+// socket io configurations
+import {SocketIoModule , SocketIoConfig} from 'ng-socket-io';
+
+const socketConfig : SocketIoConfig =  {url: 'http://ec2-13-233-114-226.ap-south-1.compute.amazonaws.com/' , options: {}}
+// pass the port of the server running the nodejs code
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ChatRoomPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    SocketIoModule.forRoot(socketConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ChatRoomPage
   ],
   providers: [
     StatusBar,
